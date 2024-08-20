@@ -1,5 +1,7 @@
 const express = require('express')
 const { faker } = require('@faker-js/faker');
+const mysql = require('mysql2');
+
 const app = express()
 const port = 3000
 const config = {
@@ -9,10 +11,8 @@ const config = {
 	database: 'nodedb'
 }
 
-const mysql = require('mysql')
+
 const connection = mysql.createConnection(config)
-
-
 
 
 app.get('/', (req,res) => {
